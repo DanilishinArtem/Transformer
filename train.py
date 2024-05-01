@@ -15,6 +15,7 @@ def get_all_sentences(ds, lang):
 
 
 def get_or_build_tokenizer(config, ds, lang) -> Tokenizer:
+    # changing all {} in the tokenizer_path to the lang
     tokenizer_path = Path(config['tokenizer_path'].format(lang))
     if not Path.exists(tokenizer_path):
         tokenizer = Tokenizer(WordLevel(unk_token = '[UNK]'))
